@@ -1,13 +1,27 @@
-var obj = {
-    name: 'Manh',
-    greet: function() {
-        console.log(`Hi, I am ${this.name}`);
-    }
-}
+// var a = new Buffer('Hello everyone');
+// console.log(a.toString());
+// console.log(a.toJSON());
 
-obj.greet();
-obj.greet.call({name: 'Jond'});
-obj.greet.apply({name: 'Jame'});
+var fs = require('fs');
+fs.readFile(__dirname + '/greet.txt', 'utf-8',
+    function (err, data) {
+        if (!err) {
+            console.log(data);
+        }
+    }
+);
+
+console.log('read file');
+// var obj = {
+//     name: 'Manh',
+//     greet: function() {
+//         console.log(`Hi, I am ${this.name}`);
+//     }
+// }
+
+// obj.greet();
+// obj.greet.call({name: 'Jond'});
+// obj.greet.apply({name: 'Jame'});
 // var util = require('util');
 
 // var name = 'Manh';
